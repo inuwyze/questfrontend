@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing TileBubble Tile Bubble renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderBottomWidth": 4,
+      "borderColor": "black",
+      "borderRadius": 10,
+      "borderRightWidth": 4,
+      "elevation": 10,
+      "marginVertical": 10,
+      "padding": 20,
+    }
+  }
+/>
+`;

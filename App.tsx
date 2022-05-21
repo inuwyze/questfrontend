@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
 
-export default function App() {
+import NavContainer from './navigation'
+
+import * as AWS from 'aws-sdk/global';
+import { QuestStateProvider } from './QuestState/AppState';
+
+
+AWS.config.region = 'ap-south-1'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'ap-south-1:80faa4ae-fec1-4a1d-ac8e-ca67f8523073',
+});
+
+
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <QuestStateProvider>
+    <NavContainer></NavContainer>
+    </QuestStateProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
